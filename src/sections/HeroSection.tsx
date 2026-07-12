@@ -115,33 +115,59 @@ export default function HeroSection({ className = '' }: Props) {
       // Phase 2 (30-70%): Static
       // Phase 3 (70-100%): Exit
 
-      scrollTl.fromTo(
-        cardRef.current,
-        { y: 0, opacity: 1 },
-        { y: '-22vh', opacity: 0, ease: 'power2.in' },
-        0.7
-      )
+    scrollTl.fromTo(
+  cardRef.current,
+  {
+    y: 0,
+    opacity: 1,
+  },
+  {
+    y: '-22vh',
+    opacity: 0,
+    ease: 'power3.inOut',
+  },
+  0.76
+)
 
-      scrollTl.fromTo(
-        bgRef.current,
-        { scale: 1, y: 0 },
-        { scale: 1.08, y: '-6vh', ease: 'none' },
-        0.7
-      )
+scrollTl.fromTo(
+  bgRef.current,
+  {
+    scale: 1,
+    y: 0,
+  },
+  {
+    scale: 1.08,
+    y: '-6vh',
+    ease: 'power1.out',
+  },
+  0.76
+)
 
-      scrollTl.fromTo(
-        bottomNavRef.current,
-        { y: 0, opacity: 1 },
-        { y: '8vh', opacity: 0, ease: 'power2.in' },
-        0.7
-      )
+scrollTl.fromTo(
+  bottomNavRef.current,
+  {
+    y: 0,
+    opacity: 1,
+  },
+  {
+    y: '8vh',
+    opacity: 0,
+    ease: 'power3.inOut',
+  },
+  0.76
+)
 
-      scrollTl.fromTo(
-        microLabelsRef.current,
-        { opacity: 1 },
-        { opacity: 0, ease: 'power2.in' },
-        0.75
-      )
+scrollTl.fromTo(
+  microLabelsRef.current,
+  {
+    opacity: 1,
+  },
+  {
+    opacity: 0,
+    ease: 'power2.inOut',
+  },
+  0.80
+)
     }, section)
 
     return () => ctx.revert()
@@ -163,11 +189,13 @@ export default function HeroSection({ className = '' }: Props) {
         ref={bgRef}
         className="absolute inset-0 w-full h-full"
         style={{ opacity: 0 }}
+        
       >
         <img
           src="/images/hero-countryside.jpg"
           alt="Countryside landscape"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover  transition-transform duration-[10000ms] ease-out hover:scale-[1.01]"
+
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/30" />
       </div>
@@ -189,7 +217,7 @@ export default function HeroSection({ className = '' }: Props) {
       {/* Center Card */}
       <div
         ref={cardRef}
-        className="absolute left-1/2 top-[52%] -translate-x-1/2 -translate-y-1/2 w-[90vw] md:w-[74vw] max-w-[1100px] bg-[#F6F2EA] rounded-xl card-shadow overflow-hidden"
+        className="absolute left-1/2 top-[52%] -translate-x-1/2 -translate-y-1/2 w-[90vw] md:w-[74vw] max-w-[800px] bg-[#F6F2EA] rounded-xl card-shadow overflow-hidden"
         style={{ opacity: 0 }}
       >
         {/* Card Image */}

@@ -113,7 +113,7 @@ export default function PlaygroundSection({ className = '' }: Props) {
         style={{ opacity: 0 }}
       >
         <img
-          src="/images/playground-lawn.jpg"
+          src="/images/11.jpg"
           alt="Kids playground"
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
         />

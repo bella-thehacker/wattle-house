@@ -55,7 +55,7 @@ export default function VinylSection({ className = '' }: Props) {
       // Disc: slides in from left, rotates, then exits right
       scrollTl.fromTo(
         discRef.current,
-        { x: '-60vw', rotation: -120, opacity: 0 },
+        { x: '-35vw', rotation: -120, opacity: 0 },
         { x: 0, rotation: 0, opacity: 1, ease: 'none' },
         0
       )
@@ -139,7 +139,7 @@ export default function VinylSection({ className = '' }: Props) {
       {/* Vinyl Disc */}
       <div
         ref={discRef}
-        className="absolute left-[-6vw] top-1/2 -translate-y-1/2 w-[56vw] h-[56vw] max-w-[680px] max-h-[680px]"
+        className="absolute left-[6vw] top-[27%] -translate-y-1/2 w-[48vw] h-[48vw] max-w-[580px] max-h-[580px] drop-shadow-[0_24px_40px_rgba(0,0,0,0.18)]"
         style={{ opacity: 0 }}
       >
         <div className="relative w-full h-full rounded-full bg-[#1A1A1A] shadow-2xl">
@@ -206,7 +206,7 @@ export default function VinylSection({ className = '' }: Props) {
       </div>
 
       {/* Right Text Block */}
-      <div className="absolute left-[56vw] top-1/2 -translate-y-1/2 w-[38vw] max-w-[520px] pr-6">
+      <div className="absolute left-[56vw] top-1/2 -translate-y-1/2 w-[34vw] max-w-[500px]">
         <h2
           ref={titleRef}
           className="font-mono text-[11px] uppercase tracking-[0.2em] text-[#6E6A62] mb-4 md:mb-6"
@@ -230,8 +230,37 @@ export default function VinylSection({ className = '' }: Props) {
               key={item.num}
               className="group cursor-pointer"
               style={{ opacity: 0 }}
-              onMouseEnter={() => setActiveTrack(i)}
-              onMouseLeave={() => setActiveTrack(null)}
+              onMouseEnter={() => {
+  setActiveTrack(i)
+
+  gsap.to(discRef.current, {
+    scale: 1.04,
+    duration: 0.45,
+    ease: 'power2.out',
+  })
+
+  gsap.to(labelHolesRef.current, {
+    rotation: (i + 1) * 12,
+    duration: 0.6,
+    ease: 'power2.out',
+  })
+}}
+
+onMouseLeave={() => {
+  setActiveTrack(null)
+
+  gsap.to(discRef.current, {
+    scale: 1,
+    duration: 0.45,
+    ease: 'power2.out',
+  })
+
+  gsap.to(labelHolesRef.current, {
+    rotation: 0,
+    duration: 0.6,
+    ease: 'power2.out',
+  })
+}}
             >
               <div className="flex items-baseline gap-3">
                 <span className="font-mono text-[10px] text-[#C8942A] tracking-wider">

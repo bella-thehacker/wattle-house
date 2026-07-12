@@ -229,27 +229,60 @@ export default function BookingSection() {
           </div>
 
           {/* Footer */}
-          <footer className="mt-12 md:mt-16 pt-6 border-t border-[#F6F2EA]/10">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-              <p className="font-display text-[#F6F2EA]/60 text-sm">
-                Wattle House Restaurant
-              </p>
-              <div className="flex items-center gap-4">
-                {['Instagram', 'Facebook'].map((social) => (
-                  <a
-                    key={social}
-                    href="#"
-                    className="font-mono text-[10px] uppercase tracking-[0.14em] text-[#F6F2EA]/50 hover:text-[#C8942A] transition-colors"
-                  >
-                    {social}
-                  </a>
-                ))}
-              </div>
-              <p className="font-mono text-[10px] text-[#F6F2EA]/40">
-                © {new Date().getFullYear()} Wattle House
-              </p>
-            </div>
-          </footer>
+         <div className="mt-20 mb-8 flex items-center justify-center">
+  <div className="w-16 h-px bg-[#C8942A]/40" />
+</div>
+<footer className="mt-16 md:mt-20 pt-8 border-t border-white/10">
+  <div className="flex flex-col gap-8">
+
+    {/* Top Footer */}
+    <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+
+      <div>
+        <h3 className="font-display text-2xl text-[#F6F2EA]">
+          Wattle House
+        </h3>
+        <p className="font-body text-sm text-[#F6F2EA]/55 mt-1">
+          A garden escape in the heart of Kikuyu.
+        </p>
+      </div>
+
+      <div className="flex items-center gap-6">
+        {['Instagram', 'Facebook'].map((social) => (
+          <a
+            key={social}
+            href="#"
+            className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#F6F2EA]/55 hover:text-[#C8942A] transition-colors duration-300"
+          >
+            {social}
+          </a>
+        ))}
+      </div>
+    </div>
+
+    {/* Bottom Footer */}
+    <div className="flex flex-col md:flex-row items-center justify-between gap-4 border-t border-white/10 pt-6">
+
+      <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-[#F6F2EA]/40">
+        © 2026 Wattle House. All Rights Reserved.
+      </p>
+
+     <a
+  href="https://ctrl-blue.vercel.app/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#F6F2EA]/35 hover:text-[#C8942A] transition-colors duration-300"
+>
+  Designed & Developed by{" "}
+  <span className="text-[#C8942A] tracking-[0.22em]">
+    CTRLCODE SOLUTIONS
+  </span>
+</a>
+
+    </div>
+
+  </div>
+</footer>
         </div>
       </div>
     </section>

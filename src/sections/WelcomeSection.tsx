@@ -22,61 +22,78 @@ export default function WelcomeSection({ className = '' }: Props) {
     if (!section) return
 
     const ctx = gsap.context(() => {
-      const scrollTl = gsap.timeline({
-        scrollTrigger: {
-          trigger: section,
-          start: 'top top',
-          end: '+=130%',
-          pin: true,
-          scrub: 0.6,
-          anticipatePin: 1,
-          invalidateOnRefresh: true,
-        },
-      })
 
-      // Line 1: entrance 0-30%, settle 30-70%, exit 70-100%
-      scrollTl.fromTo(
-        line1Ref.current,
-        { y: '18vh', opacity: 0 },
-        { y: 0, opacity: 1, ease: 'none' },
-        0
-      )
-      scrollTl.to(line1Ref.current, { y: '-14vh', opacity: 0, ease: 'power2.in' }, 0.7)
+const scrollTl = gsap.timeline({
+  scrollTrigger: {
+    trigger: section,
+    start: 'top top',
+    end: '+=165%',
+    pin: true,
+    scrub: 1.2,
+    anticipatePin: 1,
+    invalidateOnRefresh: true,
+  },
+})
 
-      // Line 2: slightly delayed entrance
-      scrollTl.fromTo(
-        line2Ref.current,
-        { y: '18vh', opacity: 0 },
-        { y: 0, opacity: 1, ease: 'none' },
-        0.04
-      )
-      scrollTl.to(line2Ref.current, { y: '-14vh', opacity: 0, ease: 'power2.in' }, 0.72)
+scrollTl.fromTo(
+  line1Ref.current,
+  { y: '12vh', opacity: 0 },
+  { y: 0, opacity: 1, ease: 'power2.out' },
+  0
+)
+.to(
+  line1Ref.current,
+  { y: '-10vh', opacity: 0, ease: 'power2.inOut' },
+  0.82
+)
 
-      // Line 3
-      scrollTl.fromTo(
-        line3Ref.current,
-        { y: '18vh', opacity: 0 },
-        { y: 0, opacity: 1, ease: 'none' },
-        0.08
-      )
-      scrollTl.to(line3Ref.current, { y: '-14vh', opacity: 0, ease: 'power2.in' }, 0.74)
+scrollTl.fromTo(
+  line2Ref.current,
+  { y: '12vh', opacity: 0 },
+  { y: 0, opacity: 1, ease: 'power2.out' },
+  0.12
+)
+.to(
+  line2Ref.current,
+  { y: '-10vh', opacity: 0, ease: 'power2.inOut' },
+  0.85
+)
 
-      // Body paragraph
-      scrollTl.fromTo(
-        bodyRef.current,
-        { y: '10vh', opacity: 0 },
-        { y: 0, opacity: 1, ease: 'none' },
-        0.12
-      )
-      scrollTl.to(bodyRef.current, { y: '-8vh', opacity: 0, ease: 'power2.in' }, 0.76)
+scrollTl.fromTo(
+  line3Ref.current,
+  { y: '12vh', opacity: 0 },
+  { y: 0, opacity: 1, ease: 'power2.out' },
+  0.24
+)
+.to(
+  line3Ref.current,
+  { y: '-10vh', opacity: 0, ease: 'power2.inOut' },
+  0.88
+)
 
-      // Links
-      scrollTl.fromTo(
-        linksRef.current,
-        { y: '6vh', opacity: 0 },
-        { y: 0, opacity: 1, ease: 'none' },
-        0.18
-      )
+scrollTl.fromTo(
+  bodyRef.current,
+  { y: '7vh', opacity: 0 },
+  { y: 0, opacity: 1, ease: 'power2.out' },
+  0.40
+)
+.to(
+  bodyRef.current,
+  { y: '-6vh', opacity: 0, ease: 'power2.inOut' },
+  0.91
+)
+
+scrollTl.fromTo(
+  linksRef.current,
+  { y: '5vh', opacity: 0 },
+  { y: 0, opacity: 1, ease: 'power2.out' },
+  0.58
+)
+.to(
+  linksRef.current,
+  { y: '3vh', opacity: 0, ease: 'power2.inOut' },
+  0.94
+)
       scrollTl.to(linksRef.current, { y: '4vh', opacity: 0, ease: 'power2.in' }, 0.78)
     }, section)
 
