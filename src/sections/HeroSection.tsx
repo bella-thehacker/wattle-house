@@ -217,11 +217,30 @@ scrollTl.fromTo(
       {/* Center Card */}
       <div
         ref={cardRef}
-        className="absolute left-1/2 top-[52%] -translate-x-1/2 -translate-y-1/2 w-[90vw] md:w-[74vw] max-w-[800px] bg-[#F6F2EA] rounded-xl card-shadow overflow-hidden"
+        className="absolute
+    left-1/2
+    top-[48%]
+    -translate-x-1/2
+    -translate-y-1/2
+
+    w-[88vw]
+    sm:w-[88vw]
+    md:w-[74vw]
+
+    max-w-[800px]
+
+    max-h-[82vh]
+    md:max-h-none
+
+    bg-[#F6F2EA]
+    rounded-xl
+    card-shadow
+    overflow-hidden
+  "
         style={{ opacity: 0 }}
       >
         {/* Card Image */}
-        <div className="w-full h-[45%] md:h-[58%] overflow-hidden">
+        <div className="w-full h-[180px] sm:h-[220px] md:h-[58%] overflow-hidden">
           <img
             src="/images/hero-lawn-card.jpg"
             alt="Wattle House garden"
@@ -230,10 +249,10 @@ scrollTl.fromTo(
         </div>
 
         {/* Card Content */}
-        <div className="p-6 md:p-8 lg:p-10">
+        <div className="p-5 sm:p-6 md:p-8 lg:p-10">
           <h1
             ref={headlineRef}
-            className="font-display text-[clamp(32px,5vw,72px)] leading-[0.92] tracking-[-0.02em] text-[#1A1A1A] mb-2"
+            className="font-display text-[clamp(18px,2.5vw,32px)] leading-[1.1] text-[#6E6A62] italic mb-4 md:mb-8"
           >
             <span className="word inline-block">Escape</span>{' '}
             <span className="word inline-block">the</span>{' '}
@@ -255,7 +274,16 @@ scrollTl.fromTo(
             </svg>
           </p>
 
-          <div ref={ctaRef} className="flex flex-wrap gap-3 md:gap-4">
+          <div
+  ref={ctaRef}
+  className="
+    flex
+    flex-col
+    sm:flex-row
+    gap-3
+    md:gap-4
+  "
+>
             <button
               onClick={() => scrollTo('collage-section')}
               className="font-mono text-[11px] uppercase tracking-[0.14em] px-6 py-3 border border-[#1A1A1A] text-[#1A1A1A] rounded-full transition-all btn-lift hover:bg-[#1A1A1A] hover:text-[#F6F2EA]"
