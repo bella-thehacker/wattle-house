@@ -219,17 +219,17 @@ scrollTl.fromTo(
         ref={cardRef}
         className="absolute
     left-1/2
-    top-[48%]
+    top-[18%]
     -translate-x-1/2
     -translate-y-1/2
 
     w-[88vw]
     sm:w-[88vw]
-    md:w-[74vw]
+    md:w-[64vw]
 
     max-w-[800px]
 
-    max-h-[82vh]
+    max-h-[52vh]
     md:max-h-none
 
     bg-[#F6F2EA]
@@ -240,7 +240,7 @@ scrollTl.fromTo(
         style={{ opacity: 0 }}
       >
         {/* Card Image */}
-        <div className="w-full h-[180px] sm:h-[220px] md:h-[58%] overflow-hidden">
+        <div className="w-full h-[120px] sm:h-[200px] md:h-[38%] overflow-hidden">
           <img
             src="/images/hero-lawn-card.jpg"
             alt="Wattle House garden"
