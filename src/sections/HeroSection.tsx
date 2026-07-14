@@ -215,43 +215,44 @@ scrollTl.fromTo(
       </div>
 
       {/* Center Card */}
-      <div
-        ref={cardRef}
+ 
+  <div
+  ref={cardRef}
   className="
-absolute
-left-1/2
+    absolute
+    left-1/2
+    top-[38%]
+sm:top-[38%]
+md:top-[25%]
+    
+    -translate-x-1/2
+    -translate-y-1/2
 
-top-[46%]
-sm:top-[48%]
-md:top-[52%]
+    w-[90vw]
+    sm:w-[88vw]
+    md:w-[68vw]
+    lg:w-[64vw]
 
--translate-x-1/2
--translate-y-1/2
+    max-w-[800px]
 
-w-[90vw]
-sm:w-[88vw]
-md:w-[74vw]
-
-max-w-[800px]
-
-bg-[#F6F2EA]
-rounded-xl
-card-shadow
-overflow-hidden
-"
-        style={{ opacity: 0 }}
-      >
+    bg-[#F6F2EA]
+    rounded-xl
+    card-shadow
+    overflow-hidden
+  "
+  style={{ opacity: 0 }}
+>
         {/* Card Image */}
-        <div className="w-full h-[120px] sm:h-[200px] md:h-[38%] overflow-hidden">
+        <div className="aspect-[16/9] md:aspect-[16/8] overflow-hidden ">
           <img
             src="/images/hero-lawn-card.jpg"
             alt="Wattle House garden"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-center"
           />
         </div>
 
         {/* Card Content */}
-      <div className="p-5 sm:p-6 md:p-8 lg:p-10">
+      <div className="p-5 md:p-7 lg:p-9">
           <h1
             ref={headlineRef}
             className="font-display text-[clamp(18px,2.5vw,32px)] leading-[1.1] text-[#6E6A62] italic mb-4 md:mb-8"
@@ -301,6 +302,7 @@ overflow-hidden
           </div>
         </div>
       </div>
+      
 
       {/* Bottom Nav */}
       <div
