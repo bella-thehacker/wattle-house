@@ -217,26 +217,28 @@ scrollTl.fromTo(
       {/* Center Card */}
       <div
         ref={cardRef}
-        className="absolute
-    left-1/2
-    top-[18%]
-    -translate-x-1/2
-    -translate-y-1/2
+  className="
+absolute
+left-1/2
 
-    w-[88vw]
-    sm:w-[88vw]
-    md:w-[64vw]
+top-[46%]
+sm:top-[48%]
+md:top-[52%]
 
-    max-w-[800px]
+-translate-x-1/2
+-translate-y-1/2
 
-    max-h-[52vh]
-    md:max-h-none
+w-[90vw]
+sm:w-[88vw]
+md:w-[74vw]
 
-    bg-[#F6F2EA]
-    rounded-xl
-    card-shadow
-    overflow-hidden
-  "
+max-w-[800px]
+
+bg-[#F6F2EA]
+rounded-xl
+card-shadow
+overflow-hidden
+"
         style={{ opacity: 0 }}
       >
         {/* Card Image */}
@@ -249,7 +251,7 @@ scrollTl.fromTo(
         </div>
 
         {/* Card Content */}
-        <div className="p-5 sm:p-6 md:p-8 lg:p-10">
+      <div className="p-5 sm:p-6 md:p-8 lg:p-10">
           <h1
             ref={headlineRef}
             className="font-display text-[clamp(18px,2.5vw,32px)] leading-[1.1] text-[#6E6A62] italic mb-4 md:mb-8"
@@ -261,7 +263,7 @@ scrollTl.fromTo(
 
           <p
             ref={subRef}
-            className="font-display text-[clamp(18px,2.5vw,32px)] leading-[1.1] text-[#6E6A62] italic mb-6 md:mb-8"
+            className="font-display text-[clamp(18px,2.5vw,32px)] leading-[1.1] text-[#6E6A62] italic mb-5 md:mb-8"
           >
             Discover Wattle House
             <svg
